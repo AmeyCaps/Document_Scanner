@@ -1,5 +1,5 @@
 # Document_Scanner
-Document scanner using OpenCV and Python.
+Document scanner using OpenCV (3.2.0) and Python (2.7.12).
 
 A very thanks to author of article http://www.pyimagesearch.com/2014/09/01/build-kick-ass-mobile-document-scanner-just-5-minutes/ for great explanations to learn from.  
 
@@ -34,6 +34,7 @@ _, contours, _ = cv2.findContours(edge, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 6.Image after prespective transform (This particular part is very well explained in article at [pyimagesearch]( http://www.pyimagesearch.com/2014/09/01/build-kick-ass-mobile-document-scanner-just-5-minutes/))- 
 
 ![scanned](https://cloud.githubusercontent.com/assets/9251814/23703883/2fb9b308-0428-11e7-9aac-1e7d24059c6c.jpg)
+
 
 
 
