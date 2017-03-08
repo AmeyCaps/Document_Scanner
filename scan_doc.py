@@ -12,13 +12,11 @@ grey = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 #blurr image to smooth 
 blurr = cv2.GaussianBlur(grey, (5,5),0)
 
-
 #finding edges 
 edge = cv2.Canny(blurr, 0, 50)   
 
 #apadtive threshold and canny gave similar final output 
 #threshold = cv2.adaptiveThreshold(blurr ,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,11,2)
-
 #find contours in thresholded image and sort them according to decreasing area
 _, contours, _ = cv2.findContours(edge, cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
 contours = sorted(contours, key=cv2.contourArea, reverse= True)
@@ -49,7 +47,6 @@ Diff = np.diff(doc, axis=1)
 new_doc[1] = doc[np.argmin(Diff)]
 new_doc[3] = doc[np.argmax(Diff)]
 
-
 (tl,tr,br,bl) = new_doc
 
 #find distance between points and get max 
@@ -69,7 +66,6 @@ N = cv2.getPerspectiveTransform(new_doc, dst)
 warp = cv2.warpPerspective(img, N, (maxLen, maxHeight))
 
 img2 = cv2.cvtColor(warp, cv2.COLOR_BGR2GRAY)
-
 img2 = cv2.resize(img2,(600,800))
 
 #cv2.imwrite("edge.jpg", edge)
