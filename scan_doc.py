@@ -1,7 +1,7 @@
 import numpy as np 
 import cv2
 
-img = cv2.imread("/home/ameycu/Downloads/a.jpg",1)
+img = cv2.imread("test.jpg",1)
 
 #resize image
 img = cv2.resize(img,(600,800))
